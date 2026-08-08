@@ -1,0 +1,77 @@
+{
+  "student": {
+    "firstName": "Aanya",
+    "initials": "AS",
+    "greeting": "Good evening",
+    "dashboardDate": "Saturday, 8 August",
+    "currentStreak": 12
+  },
+  "challenge": {
+    "currentDay": 12,
+    "completedDays": 12,
+    "totalDays": 60,
+    "track": "AI & Career",
+    "completionPercentage": 20,
+    "daysRemaining": 48,
+    "weeklyActivity": [
+      { "label": "M", "completed": true },
+      { "label": "T", "completed": true },
+      { "label": "W", "completed": true },
+      { "label": "T", "completed": true },
+      { "label": "F", "completed": true },
+      { "label": "S", "completed": true },
+      { "label": "S", "completed": false, "display": "7" }
+    ]
+  },
+  "todayTask": {
+    "category": "AI & Career",
+    "title": "Build your first LinkedIn carousel",
+    "shortDescription": "Turn one college project into a post that gets noticed.",
+    "estimatedTime": "15–20 min"
+  },
+  "dashboard": {
+    "standing": {
+      "topPercent": 18,
+      "rankChange": 6
+    },
+    "achievements": [
+      { "name": "First Step", "label": "Day 1 done", "icon": "check", "unlocked": true },
+      { "name": "On Fire", "label": "7-day streak", "icon": "flame", "unlocked": true },
+      { "name": "Halfway", "label": "30 days", "icon": "lock", "unlocked": false }
+    ]
+  },
+  "challengeDay": {
+    "task": {
+      "title": "Build your first LinkedIn carousel",
+      "description": "Turn one college project into a clear, useful carousel that shows what you built and what you learned.",
+      "whyItMatters": "Great work deserves a visible story. A thoughtful post helps recruiters and peers understand your skills beyond a resume."
+    },
+    "build": {
+      "description": "One LinkedIn carousel that tells the story of a project in a way a recruiter can scan.",
+      "expectedOutput": "A published LinkedIn carousel + the project repository or source link.",
+      "checklist": [
+        "Choose one project, event, or assignment you are proud of",
+        "Create 4–6 simple slides in Canva, Figma, or Google Slides",
+        "Explain the problem, your approach, and one result or learning",
+        "Export your carousel and publish it with a short LinkedIn caption"
+      ]
+    },
+    "guidance": [
+      "Keep one idea per slide—clarity beats fancy design.",
+      "Use a real screenshot or small code snippet as proof.",
+      "End with what you would improve next time."
+    ],
+    "proofs": {
+      "github": {
+        "type": "GitHub",
+        "placeholder": "https://github.com/your-username/project",
+        "initialSubmitted": false
+      },
+      "linkedin": {
+        "type": "LinkedIn",
+        "placeholder": "https://www.linkedin.com/posts/your-post",
+        "initialSubmitted": false
+      }
+    }
+  }
+}

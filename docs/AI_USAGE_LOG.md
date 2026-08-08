@@ -269,3 +269,36 @@ The following major milestones have now been completed:
 6. Perform final build and submission checks.
 
 AI-generated code is reviewed and manually tested before being committed to the repository.
+
+---
+
+## 8. Centralized Mock Data and Challenge State
+
+### AI Tool
+
+Codex integrated in VS Code
+
+### Purpose
+
+Used Codex to centralize the application's static student and challenge information and connect the Dashboard and Challenge Day pages to a shared mock-data structure.
+
+### Key Tasks
+
+- Created:
+  - `src/data/mockData.json`
+- Centralized student information, challenge progress, today's task, achievements, and Challenge Day content.
+- Updated Dashboard components to use centralized mock data.
+- Updated Challenge Day components to use the same challenge information.
+- Added frontend state handling for challenge completion.
+- Added mocked GitHub and LinkedIn proof submission.
+- Added local browser state so submitted proofs are remembered during testing.
+- Connected challenge completion with the dashboard progress.
+- After completing Day 12:
+  - Streak increases from 12 to 13.
+  - Challenge day increases from 12 to 13.
+  - Progress updates from 20% to 22%.
+- No real GitHub or LinkedIn API was implemented.
+
+### Result
+
+The Dashboard and Challenge Day now behave like a connected student journey rather than independent static screens.

@@ -1,8 +1,10 @@
+import mockData from '../data/mockData.json'
+
 const storageKey = 'abtalks-day-12-progress'
 
 const defaultProgress = {
-  githubSubmitted: false,
-  linkedinSubmitted: false,
+  githubSubmitted: mockData.challengeDay.proofs.github.initialSubmitted,
+  linkedinSubmitted: mockData.challengeDay.proofs.linkedin.initialSubmitted,
 }
 
 export function getDay12Progress() {
@@ -31,5 +33,25 @@ export function isDay12Complete(progress) {
 }
 
 export function getMockedStreak(progress) {
-  return isDay12Complete(progress) ? 13 : 12
+  return isDay12Complete(progress)
+    ? mockData.student.currentStreak + 1
+    : mockData.student.currentStreak
+}
+
+export function getChallengeStatus(progress) {
+  const completed = isDay12Complete(progress)
+  const completedDays = mockData.challenge.completedDays + (completed ? 1 : 0)
+  const totalDays = mockData.challenge.totalDays
+
+  return {
+    ...mockData.challenge,
+    currentDay: completed ? mockData.challenge.currentDay + 1 : mockData.challenge.currentDay,
+    completedDays,
+    completionPercentage: Math.round((completedDays / totalDays) * 100),
+    daysRemaining: totalDays - completedDays,
+    weeklyActivity: mockData.challenge.weeklyActivity.map((day) => ({
+      ...day,
+      completed: day.completed || (completed && Boolean(day.display)),
+    })),
+  }
 }

@@ -1,11 +1,5 @@
 import DashboardIcon from './DashboardIcon'
 
-const badges = [
-  { name: 'First Step', label: 'Day 1 done', icon: 'check', unlocked: true },
-  { name: 'On Fire', label: '7-day streak', icon: 'flame', unlocked: true },
-  { name: 'Halfway', label: '30 days', icon: 'lock', unlocked: false },
-]
-
-export default function Achievements() {
-  return <section><div className="flex items-center justify-between"><h2 className="font-display text-lg font-bold text-white">Achievements</h2><button className="text-sm font-semibold text-ab-accent">See all</button></div><div className="mt-3 grid grid-cols-3 gap-3">{badges.map((badge) => <article key={badge.name} className={`rounded-2xl border p-3 text-center ${badge.unlocked ? 'border-ab-border bg-ab-card' : 'border-ab-border/60 bg-ab-surface/40 opacity-60'}`}><div className={`mx-auto grid h-10 w-10 place-items-center rounded-xl ${badge.unlocked ? 'bg-ab-accent/15 text-ab-accent' : 'bg-ab-border text-ab-muted'}`}><DashboardIcon name={badge.icon} className="h-5 w-5" /></div><h3 className="mt-2 text-xs font-bold text-white">{badge.name}</h3><p className="mt-1 text-[10px] text-ab-muted">{badge.label}</p></article>)}</div></section>
+export default function Achievements({ achievements }) {
+  return <section><div className="flex items-center justify-between"><h2 className="font-display text-lg font-bold text-white">Achievements</h2><button className="text-sm font-semibold text-ab-accent">See all</button></div><div className="mt-3 grid grid-cols-3 gap-3">{achievements.map((badge) => <article key={badge.name} className={`rounded-2xl border p-3 text-center ${badge.unlocked ? 'border-ab-border bg-ab-card' : 'border-ab-border/60 bg-ab-surface/40 opacity-60'}`}><div className={`mx-auto grid h-10 w-10 place-items-center rounded-xl ${badge.unlocked ? 'bg-ab-accent/15 text-ab-accent' : 'bg-ab-border text-ab-muted'}`}><DashboardIcon name={badge.icon} className="h-5 w-5" /></div><h3 className="mt-2 text-xs font-bold text-white">{badge.name}</h3><p className="mt-1 text-[10px] text-ab-muted">{badge.label}</p></article>)}</div></section>
 }
