@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-ab-bg text-ab-text font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-ab-accent/30 text-white;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply font-display text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl;
+  }
+
+  .section-subheading {
+    @apply mt-3 text-base text-ab-muted sm:text-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-xl bg-ab-accent px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-ab-accent-hover active:scale-[0.98] sm:text-base;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-xl border border-ab-border bg-ab-surface/50 px-6 py-3 text-sm font-semibold text-ab-text transition-all duration-200 hover:border-ab-muted/40 hover:bg-ab-card active:scale-[0.98] sm:text-base;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ab-border bg-ab-card/80 p-5 backdrop-blur-sm sm:p-6;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+}
