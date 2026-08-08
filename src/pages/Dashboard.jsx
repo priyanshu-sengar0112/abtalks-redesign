@@ -6,6 +6,7 @@ import StreakCard from '../components/dashboard/StreakCard'
 import TodayTaskCard from '../components/dashboard/TodayTaskCard'
 import ProfileSetupCard from '../components/dashboard/ProfileSetupCard'
 import StudentStateNotice from '../components/dashboard/StudentStateNotice'
+import NextBestAction from '../components/dashboard/NextBestAction'
 import { getChallengeStatus, getDay12Progress, getMockedStreak } from '../utils/challengeDayState'
 import { getStatePath, getStudentState } from '../utils/studentState'
 
@@ -21,6 +22,7 @@ export default function Dashboard() {
         <DashboardHeader student={state.student} />
         <div className="mt-7 space-y-4">
           <StudentStateNotice edgeCase={state.edgeCase} state={state} />
+          <NextBestAction state={state} />
           <ProfileSetupCard edgeCase={state.edgeCase} />
           <StreakCard week={challenge.weeklyActivity} streak={streak} />
           <TodayTaskCard task={state.todayTask} challengePath={getStatePath('/day/12', state)} />
