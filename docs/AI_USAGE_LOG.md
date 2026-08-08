@@ -102,3 +102,99 @@ Used ChatGPT to understand and implement routing for the three required hackatho
 /
 /dashboard
 /day/12
+
+---
+
+## 5. Student Dashboard Development
+
+### AI Tool
+
+Codex integrated in VS Code
+
+### Purpose
+
+Used Codex to build the Student Dashboard according to the ABTalks hackathon problem statement.
+
+### Key Tasks
+
+- Created a mobile-first Student Dashboard at:
+  - `/dashboard`
+- Created reusable Dashboard-specific components inside:
+  - `src/components/dashboard/`
+- Updated:
+  - `src/pages/Dashboard.jsx`
+- Added sections for:
+  - Current streak
+  - Today's task
+  - 60-day challenge progress
+  - Overall completion
+  - Student standing
+  - Achievements
+- Used static/mock content for the Dashboard.
+- Did not add any external dependencies.
+- Kept the existing Landing Page and Challenge Day route unchanged.
+- Verified that the project builds successfully using:
+  - `npm.cmd run build`
+
+### Dashboard Components
+
+The Dashboard currently uses reusable components including:
+
+- DashboardHeader
+- DashboardIcon
+- StreakCard
+- TodayTaskCard
+- ProgressOverview
+- StandingCard
+- Achievements
+
+---
+
+## 6. Mobile Responsiveness Testing
+
+### AI Tool
+
+ChatGPT
+
+### Purpose
+
+Used ChatGPT to understand how to test the application at the required 390px mobile viewport.
+
+### Key Tasks
+
+- Opened Chrome Developer Tools.
+- Enabled the device toolbar.
+- Set the viewport width to 390px.
+- Tested the Landing Page at 390px.
+- Confirmed that the Landing Page responds correctly at the required mobile width.
+- Confirmed that the Landing Page does not require a redesign for the 390px requirement.
+
+### Result
+
+The Landing Page was successfully tested at a 390px viewport and remained usable and responsive.
+
+---
+
+## 7. Development Approach
+
+### AI Tools
+
+ChatGPT and Codex
+
+### Approach
+
+The project is being developed incrementally instead of generating the entire application at once.
+
+Current development milestones:
+
+1. Landing Page
+2. React Router setup
+3. Student Dashboard
+4. Connect application navigation
+5. Challenge Day
+6. Mock JSON data
+7. Mock GitHub and LinkedIn proof submission
+8. Edge-case handling
+9. Final 390px responsive testing
+
+AI-generated code is reviewed and tested manually before being committed to the repository.

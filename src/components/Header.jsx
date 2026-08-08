@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Logo({ className = 'h-8 w-8' }) {
   return (
@@ -62,9 +63,9 @@ export default function Header({ scrolled }) {
           <a href="#login" className="btn-secondary !min-h-[44px] !px-5 !py-2.5 !text-sm">
             Login
           </a>
-          <a href="#start" className="btn-primary !min-h-[44px] !px-5 !py-2.5 !text-sm">
+          <Link to="/dashboard" className="btn-primary !min-h-[44px] !px-5 !py-2.5 !text-sm">
             Start Challenge
-          </a>
+          </Link>
         </div>
 
         <button
@@ -107,9 +108,9 @@ export default function Header({ scrolled }) {
               <a href="#login" onClick={closeMenu} className="btn-secondary w-full">
                 Login
               </a>
-              <a href="#start" onClick={closeMenu} className="btn-primary w-full">
+              <Link to="/dashboard" onClick={closeMenu} className="btn-primary w-full">
                 Start Challenge
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

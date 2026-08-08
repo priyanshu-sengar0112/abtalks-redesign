@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function CTA() {
   return (
     <section id="start" className="py-16 sm:py-24">
@@ -25,7 +27,7 @@ export default function CTA() {
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a href="#signup" className="btn-primary w-full sm:w-auto">
+              <Link to="/dashboard" className="btn-primary w-full sm:w-auto">
                 Start Challenge
                 <svg
                   className="ml-2 h-4 w-4"
@@ -36,7 +38,7 @@ export default function CTA() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-              </a>
+              </Link>
               <a href="#login" className="btn-secondary w-full sm:w-auto">
                 I already have an account
               </a>

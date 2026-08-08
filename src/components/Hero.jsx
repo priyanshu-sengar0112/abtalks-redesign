@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero() {
   const stats = [
     { value: '60', label: 'Days' },
@@ -33,8 +35,8 @@ export default function Hero() {
           </p>
 
           <div className="animate-fade-up animate-delay-300 mt-8 flex flex-col items-center gap-3 opacity-0 sm:flex-row sm:justify-center">
-            <a
-              href="#start"
+            <Link
+              to="/dashboard"
               className="btn-primary animate-pulse-glow w-full sm:w-auto"
             >
               Start Your 60-Day Journey
@@ -47,7 +49,7 @@ export default function Hero() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </a>
+            </Link>
             <a href="#how-it-works" className="btn-secondary w-full sm:w-auto">
               See How It Works
             </a>
