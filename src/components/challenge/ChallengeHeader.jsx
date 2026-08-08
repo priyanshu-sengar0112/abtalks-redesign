@@ -1,0 +1,6 @@
+import { Link } from 'react-router-dom'
+import ChallengeIcon from './ChallengeIcon'
+
+export default function ChallengeHeader({ streak }) {
+  return <header><Link to="/dashboard" className="inline-flex min-h-[36px] items-center gap-1 text-sm font-medium text-ab-muted transition hover:text-white"><ChallengeIcon name="arrowLeft" className="h-4 w-4" />Dashboard</Link><div className="mt-5 flex items-start justify-between gap-4"><div><p className="text-sm font-semibold uppercase tracking-[0.16em] text-ab-accent">Challenge day</p><h1 className="mt-1 font-display text-3xl font-bold tracking-tight text-white">Day 12</h1><p className="mt-1 text-sm text-ab-muted">Day 12 of 60 · AI &amp; Career track</p></div><div className="flex items-center gap-2 rounded-2xl border border-orange-400/20 bg-orange-500/10 px-3 py-2 text-orange-300"><ChallengeIcon name="flame" className="h-5 w-5" /><div><p className="text-[10px] font-semibold uppercase tracking-wide text-orange-200/70">Streak</p><p className="text-sm font-bold leading-tight">{streak} days</p></div></div></div><div className="mt-5 h-2 overflow-hidden rounded-full bg-ab-border"><div className="h-full w-1/5 rounded-full bg-gradient-to-r from-ab-accent to-orange-300" /></div></header>
+}

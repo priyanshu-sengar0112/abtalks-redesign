@@ -198,3 +198,74 @@ Current development milestones:
 9. Final 390px responsive testing
 
 AI-generated code is reviewed and tested manually before being committed to the repository.
+
+
+---
+
+## 8. Challenge Day Development
+
+### AI Tool
+
+Codex integrated in VS Code
+
+### Purpose
+
+Used Codex to implement the Challenge Day page according to the ABTalks hackathon problem statement.
+
+### Key Tasks
+
+- Implemented the Challenge Day page at:
+  - `/day/12`
+- Added the Day 12 challenge information.
+- Added the current streak display.
+- Added today's task and task explanation.
+- Added a "What to build" section.
+- Added expected output information.
+- Added GitHub proof submission.
+- Added LinkedIn proof submission.
+- Added completion state after both proofs are submitted.
+- Added mock/local state handling for the proof submissions.
+- Added functionality so the submitted proof state can persist after refreshing the page.
+- Connected the Challenge Day interaction with the student's challenge progress/streak state.
+- Verified the page at the required mobile viewport.
+
+### Testing
+
+The following functionality was manually tested:
+
+- `/day/12` loads correctly.
+- GitHub proof can be submitted.
+- LinkedIn proof can be submitted.
+- Completion state appears after both proofs are submitted.
+- Streak/progress state updates correctly.
+- Submitted state remains after page refresh.
+- Dashboard route continues to work.
+- Landing Page route continues to work.
+
+### Result
+
+The Challenge Day page is now functional rather than being only a static UI.
+
+---
+
+## 9. Current Development Progress
+
+The following major milestones have now been completed:
+
+1. Landing Page
+2. React Router setup
+3. Student Dashboard
+4. Challenge Day
+5. Mock proof submission functionality
+6. Mobile responsiveness testing
+
+### Remaining Work
+
+1. Create centralized mock JSON data.
+2. Connect Dashboard and Challenge Day to the mock data.
+3. Improve shared state between pages.
+4. Handle edge cases and validation.
+5. Perform final 390px responsive testing.
+6. Perform final build and submission checks.
+
+AI-generated code is reviewed and manually tested before being committed to the repository.
