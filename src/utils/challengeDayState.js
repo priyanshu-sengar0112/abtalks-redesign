@@ -1,17 +1,25 @@
 import mockData from '../data/mockData.json'
+import { getStudentState } from './studentState'
 
 const storageKey = 'abtalks-day-12-progress'
 
-const defaultProgress = {
-  githubSubmitted: mockData.challengeDay.proofs.github.initialSubmitted,
-  linkedinSubmitted: mockData.challengeDay.proofs.linkedin.initialSubmitted,
+function getStorageKey(state) {
+  return state.id === 'normal' ? storageKey : `${storageKey}-${state.id}`
 }
 
-export function getDay12Progress() {
+function getDefaultProgress(state) {
+  return {
+    githubSubmitted: state.challengeDay.proofs.github.initialSubmitted,
+    linkedinSubmitted: state.challengeDay.proofs.linkedin.initialSubmitted,
+  }
+}
+
+export function getDay12Progress(state = getStudentState()) {
+  const defaultProgress = getDefaultProgress(state)
   if (typeof window === 'undefined') return defaultProgress
 
   try {
-    const savedProgress = JSON.parse(window.localStorage.getItem(storageKey))
+    const savedProgress = JSON.parse(window.localStorage.getItem(getStorageKey(state)))
     return {
       githubSubmitted: Boolean(savedProgress?.githubSubmitted),
       linkedinSubmitted: Boolean(savedProgress?.linkedinSubmitted),
@@ -21,8 +29,8 @@ export function getDay12Progress() {
   }
 }
 
-export function saveDay12Progress(progress) {
-  window.localStorage.setItem(storageKey, JSON.stringify({
+export function saveDay12Progress(progress, state = getStudentState()) {
+  window.localStorage.setItem(getStorageKey(state), JSON.stringify({
     githubSubmitted: Boolean(progress.githubSubmitted),
     linkedinSubmitted: Boolean(progress.linkedinSubmitted),
   }))
@@ -32,24 +40,24 @@ export function isDay12Complete(progress) {
   return progress.githubSubmitted && progress.linkedinSubmitted
 }
 
-export function getMockedStreak(progress) {
+export function getMockedStreak(progress, state = getStudentState()) {
   return isDay12Complete(progress)
-    ? mockData.student.currentStreak + 1
-    : mockData.student.currentStreak
+    ? state.student.currentStreak + 1
+    : state.student.currentStreak
 }
 
-export function getChallengeStatus(progress) {
+export function getChallengeStatus(progress, state = getStudentState()) {
   const completed = isDay12Complete(progress)
-  const completedDays = mockData.challenge.completedDays + (completed ? 1 : 0)
-  const totalDays = mockData.challenge.totalDays
+  const completedDays = state.challenge.completedDays + (completed ? 1 : 0)
+  const totalDays = state.challenge.totalDays
 
   return {
-    ...mockData.challenge,
-    currentDay: completed ? mockData.challenge.currentDay + 1 : mockData.challenge.currentDay,
+    ...state.challenge,
+    currentDay: completed ? state.challenge.currentDay + 1 : state.challenge.currentDay,
     completedDays,
     completionPercentage: Math.round((completedDays / totalDays) * 100),
     daysRemaining: totalDays - completedDays,
-    weeklyActivity: mockData.challenge.weeklyActivity.map((day) => ({
+    weeklyActivity: state.challenge.weeklyActivity.map((day) => ({
       ...day,
       completed: day.completed || (completed && Boolean(day.display)),
     })),

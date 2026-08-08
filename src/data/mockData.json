@@ -73,5 +73,93 @@
         "initialSubmitted": false
       }
     }
+  },
+  "mockStates": {
+    "newStudent": {
+      "student": { "firstName": "Riya", "initials": "RS", "currentStreak": 0 },
+      "challenge": {
+        "currentDay": 1,
+        "completedDays": 0,
+        "completionPercentage": 0,
+        "daysRemaining": 60,
+        "weeklyActivity": [
+          { "label": "M", "completed": false, "display": "1" },
+          { "label": "T", "completed": false, "display": "2" },
+          { "label": "W", "completed": false, "display": "3" },
+          { "label": "T", "completed": false, "display": "4" },
+          { "label": "F", "completed": false, "display": "5" },
+          { "label": "S", "completed": false, "display": "6" },
+          { "label": "S", "completed": false, "display": "7" }
+        ]
+      },
+      "todayTask": {
+        "title": "Set up your public learning log",
+        "shortDescription": "Choose one place to document what you build during the next 60 days.",
+        "estimatedTime": "10–15 min"
+      },
+      "dashboard": {
+        "standing": { "emptyMessage": "Complete Day 1 to join this week’s leaderboard." },
+        "achievements": []
+      },
+      "edgeCase": {
+        "type": "new",
+        "title": "Your 60-day journey starts today",
+        "description": "No streak to protect yet—just one small first step. Finish Day 1 and make it yours.",
+        "actionLabel": "Begin Day 1"
+      },
+      "challengeDay": {
+        "task": {
+          "title": "Set up your public learning log",
+          "description": "Create a simple place to track the projects, ideas, and lessons you will share during this challenge.",
+          "whyItMatters": "A visible record makes your progress easier to reflect on and easier for recruiters to understand."
+        },
+        "build": {
+          "description": "One simple learning log in Notion, GitHub, or a document you will update daily.",
+          "expectedOutput": "A shareable link or first entry that states what you plan to build.",
+          "checklist": [
+            "Choose a place to keep your 60-day learning log",
+            "Write one goal for the challenge",
+            "Add your first short entry and share it"
+          ]
+        },
+        "guidance": [
+          "Keep it simple enough to update after a busy college day.",
+          "Write what you built and one thing you learned.",
+          "Progress matters more than a perfect first post."
+        ]
+      }
+    },
+    "missedDay": {
+      "student": { "firstName": "Kabir", "initials": "KS", "currentStreak": 0 },
+      "challenge": {
+        "completedDays": 11,
+        "completionPercentage": 18,
+        "daysRemaining": 49,
+        "weeklyActivity": [
+          { "label": "M", "completed": true },
+          { "label": "T", "completed": true },
+          { "label": "W", "completed": true },
+          { "label": "T", "completed": false, "display": "!" },
+          { "label": "F", "completed": true },
+          { "label": "S", "completed": true },
+          { "label": "S", "completed": false, "display": "7" }
+        ]
+      },
+      "edgeCase": {
+        "type": "missed",
+        "title": "You missed a day—your journey is still on",
+        "description": "Your streak reset, but your 11 completed days still count. Pick up today’s task and keep building.",
+        "actionLabel": "Continue today’s task"
+      }
+    },
+    "emptyProfile": {
+      "student": { "firstName": "", "initials": "", "profileComplete": false },
+      "edgeCase": {
+        "type": "profile",
+        "title": "Profile details missing",
+        "description": "Add your name and college to make your challenge progress feel personal.",
+        "actionLabel": "Complete profile"
+      }
+    }
   }
 }
