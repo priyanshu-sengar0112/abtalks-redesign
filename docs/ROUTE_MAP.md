@@ -1,87 +1,152 @@
 # ABTalks Redesign — Route Map
 
-Use this document for automated screenshot capture at **390px viewport width**.
+This document provides the routes required for the ABTalks redesign hackathon submission.
 
-## How to Run
+The application is designed mobile-first and will be evaluated at a **390px viewport width**.
 
-```bash
-cd landing-page
+---
+
+## Required Routes
+
+The three required routes are listed below in the exact order specified by the hackathon:
+
+```text
+/
+/dashboard
+/day/12
+Route 1 — Landing Page
+URL
+/
+Purpose
+
+The Landing Page is the first experience for a student who has never heard of ABTalks.
+
+It explains the 60-day coding challenge and motivates students to participate.
+
+Main Content
+Hero section
+How It Works
+Why ABTalks
+Challenge Tracks
+Social Proof
+Final CTA
+Footer
+Main Goal
+
+A new student should understand:
+
+What the 60-day challenge is.
+What they need to do every day.
+How GitHub and LinkedIn proof of work are used.
+Why consistency and public proof of work matter.
+Route 2 — Student Dashboard
+URL
+/dashboard
+Purpose
+
+The Student Dashboard is the student's home screen after joining the challenge.
+
+Dashboard Information
+Current streak
+Today's task
+60-day challenge progress
+Overall completion
+Student standing
+Achievements
+Component Organization
+
+Dashboard-specific reusable components are located in:
+
+src/components/dashboard/
+Route 3 — Challenge Day 12
+URL
+/day/12
+Purpose
+
+This page provides the complete experience for a single challenge day.
+
+Student Can
+Read the day's task.
+Understand what needs to be built.
+View the expected output.
+Submit mocked GitHub repository/commit proof.
+Submit mocked LinkedIn post proof.
+Complete the challenge after submitting both proofs.
+See the mocked streak update after completion.
+Implementation
+
+The Challenge Day functionality uses frontend state/local storage.
+
+Real:
+
+GitHub API
+LinkedIn API
+Authentication
+Production database
+
+are not required.
+
+Student Journey
+
+The intended flow through the application is:
+
+Landing Page
+     |
+     | Start Challenge
+     ↓
+Student Dashboard
+     |
+     | Start Today's Task
+     ↓
+Challenge Day 12
+Mobile Viewport
+
+The hackathon evaluates the application at:
+
+390px width
+Design Approach
+Mobile-first
+Responsive layout
+Single-column layout where appropriate
+Touch-friendly buttons
+Responsive typography
+No horizontal scrolling
+
+Desktop is treated as a secondary responsive layout.
+
+Local Development
+
+From the project root:
+
 npm install
 npm run dev
-```
 
-**Local base URL:** `http://localhost:5173`
+The local development server normally runs at:
 
-**Production preview:**
-
-```bash
-npm run build
-npm run preview
-```
-
-**Base URL:** `http://localhost:4173`
-
----
-
-## Routes
-
-| Route | Screen | Purpose | Screenshot |
-|-------|--------|---------|------------|
-| `/` | Landing Page | First-time student experience — explains the 60-day challenge, tracks, proof-of-work, and CTA | **Full-page scroll** (all sections on one page) |
-
----
-
-## Landing Page Sections (on `/`)
-
-These are anchor sections on the same route. Scroll to capture each area, or capture one full-page screenshot.
-
-| Anchor | Section | Content |
-|--------|---------|---------|
-| *(top)* | Hero | Headline, 60-day explanation, primary CTA |
-| `#how-it-works` | How It Works | Pick track → Build daily → Submit proof |
-| `#tracks` | Challenge Tracks | Web Dev, AI/ML, DSA |
-| `#stories` | Social Proof | Student stats and achievement stories |
-| `#start` | Final CTA | “Start Challenge” call to action |
-
----
-
-## Mobile Viewport
-
-- **Primary design width:** 390px
-- **Viewport meta:** `width=device-width, initial-scale=1.0`
-- **Touch targets:** minimum 48px height on buttons
-- **Layout:** single column, stacked sections, hamburger nav on mobile
-
-### Screenshot settings
-
-```
-Viewport width:  390px
-Viewport height: 844px (or full-page capture)
-Device scale:    1x
-```
-
----
-
-## Example URLs for Capture
-
-```
+http://localhost:5173
+Routes for Local Testing
 http://localhost:5173/
-http://localhost:5173/#how-it-works
-http://localhost:5173/#tracks
-http://localhost:5173/#stories
-http://localhost:5173/#start
-```
+http://localhost:5173/dashboard
+http://localhost:5173/day/12
+Production Build
 
-Replace the host with your deployed URL when submitting (e.g. Vercel, Netlify, GitHub Pages).
+To create a production build:
 
----
+npm run build
 
-## Design Intent
+To preview the production build locally:
 
-Built **mobile-first at 390px** for students who use the platform on their phones, often late at night after college. Desktop layouts are a secondary enhancement via responsive breakpoints (`sm:`, `md:`, `lg:`).
+npm run preview
+Out of Scope
 
-A student who has never heard of ABTalks should understand within the hero:
+The following are intentionally not implemented:
 
-1. What the challenge is (60 days)
-2. What they do daily (build + submit GitHub commit + LinkedIn post)
-3. Why it matters (consistency, portfolio, recruiter visibility)
+Authentication
+Real user accounts
+Production database
+Real GitHub API
+Real LinkedIn API
+Recruiter dashboard
+Admin panel
+
+Mocked/static data is used where appropriate.
